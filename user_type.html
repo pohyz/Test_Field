@@ -1,8 +1,25 @@
-<form ng-submit="updateUserType()">
-<input type="hidden" ng-model="user_type" value="ind">
-<input type="submit" value="Individual">
-</form>
-<form ng-submit="updateUserType()">
-<input type="hidden" ng-model="user_type" value="cpr">
-<input type="submit" value="Corporate">
-</form>
+<script language="javascript" type="text/javascript">
+	function UserTypeCtrl($scope, $resource) {
+  
+  $scope.Model = $resource("http://galaxy-osmosis.appspot.com/db/link",
+    {},
+    {"send": {method: 'JSONP', isArray: false, params: {callback: 'JSON_CALLBACK'}}}
+    );
+  $scope.nickname;
+
+  $scope.updateUserType = function(){
+
+    $scope.Model.send({'user_type':$scope.user_type},function(response){});
+  };
+}
+</script>
+<div ng-controller="UserTypeCtrl">
+	<form ng-submit="updateUserType()">
+	<input type="hidden" ng-model="user_type" value="ind">
+	<input type="submit" value="Individual">
+	</form>
+	<form ng-submit="updateUserType()">
+	<input type="hidden" ng-model="user_type" value="cpr">
+	<input type="submit" value="Corporate">
+	</form>
+</div>
