@@ -22,7 +22,7 @@ function LoginCtrl($scope, $resource) {
 
 function UserTypeCtrl($scope, $resource) {
   
-  $scope.Model = $resource("http://galaxy-osmosis.appspot.com/db/link",
+  $scope.Model = $resource("http://galaxy-osmosis.appspot.com/db/set_user_type",
     {},
     {"send": {method: 'JSONP', isArray: false, params: {callback: 'JSON_CALLBACK'}}}
     );
