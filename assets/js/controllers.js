@@ -20,8 +20,18 @@ function LoginCtrl($scope, $resource) {
   $scope.getLink();
 }
 
-function UserCtrl($scope, $resource) {
+function UserTypeCtrl($scope, $resource) {
   
+  $scope.Model = $resource("http://galaxy-osmosis.appspot.com/db/link",
+    {},
+    {"send": {method: 'JSONP', isArray: false, params: {callback: 'JSON_CALLBACK'}}}
+    );
+  $scope.nickname;
+
+  $scope.updateUserType = function(){
+
+    $scope.Model.send({'user_type':$scope.user_type},function(response){});
+  };
 }
 
 function ProfileCtrl($scope, $resource) {
