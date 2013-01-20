@@ -26,7 +26,6 @@ function UserTypeCtrl($scope, $resource) {
     {},
     {"send": {method: 'JSONP', isArray: false, params: {callback: 'JSON_CALLBACK'}}}
     );
-  $scope.nickname;
 
   $scope.updateUserType_C = function(){
 
