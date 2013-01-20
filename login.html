@@ -1,5 +1,8 @@
 Hi! {{nickname}}!<br>
 <a href="{{login_url}}">Login</a>
+<form ng-submit="getLink()">
+	<input type="submit" value="get link">
+</form>
 <script>
 	$(window).load(function(){
 		var ctrl = angular.element('body').scope();
