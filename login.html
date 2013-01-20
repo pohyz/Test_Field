@@ -1,0 +1,8 @@
+<script>
+	$(window).load(function(){
+		var ctrl = angular.element('body').scope();
+		ctrl.getLink();
+	});
+</script>
+Hi! {{nickname}}!<br>
+<a href="{{login_url}}">Login</a>
