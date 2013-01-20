@@ -28,9 +28,14 @@ function UserTypeCtrl($scope, $resource) {
     );
   $scope.nickname;
 
-  $scope.updateUserType = function(){
+  $scope.updateUserType_C = function(){
 
-    $scope.Model.send({'user_type':$scope.user_type},function(response){location.href=response.redirect_url;});
+    $scope.Model.send({'user_type':$scope.user_type_c},function(response){location.href=response.redirect_url;});
+  };
+
+  $scope.updateUserType_I = function(){
+
+    $scope.Model.send({'user_type':$scope.user_type_i},function(response){location.href=response.redirect_url;});
   };
 }
 
