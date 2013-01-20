@@ -30,7 +30,7 @@ function UserTypeCtrl($scope, $resource) {
 
   $scope.updateUserType = function(){
 
-    $scope.Model.send({'user_type':$scope.user_type},function(response){});
+    $scope.Model.send({'user_type':$scope.user_type},function(response){location.href=response.redirect_url;});
   };
 }
 
