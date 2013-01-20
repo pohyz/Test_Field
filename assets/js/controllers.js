@@ -16,6 +16,8 @@ function LoginCtrl($scope, $resource) {
       $scope.nickname = response.nickname;
     });
   };
+
+  $scope.getLink();
 }
 
 function UserCtrl($scope, $resource) {
