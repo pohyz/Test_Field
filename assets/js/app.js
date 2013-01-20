@@ -1,7 +1,7 @@
 'use strict';
 
 /* App Module */
-angular.module('osmosis', []).
+angular.module('osmosis', ['ngResource']).
   config(['$routeProvider', function($routeProvider) {
   $routeProvider.
       when('/login', {templateUrl: 'login.html',   controller: UserCtrl}).
