@@ -29,13 +29,12 @@ function UserTypeCtrl($scope, $resource) {
   $scope.haha = "abc";
   $scope.updateUserType_C = function(){
 
-    //$scope.Model.send({'user_type':$scope.user_type_i,'ut_method':'set_user_type_c'},function(response){$scope.haha=response.redirect_url;});
-    $scope.haha = $scope.user_type_c;
+    $scope.Model.send({'user_type':"cpr",'ut_method':'set_user_type_c'},function(response){$scope.haha=response.redirect_url;});
   };
 
   $scope.updateUserType_I = function(){
 
-    $scope.Model.send({'ut_method':'set_user_type_i'},function(response){location.href=response.redirect_url;});
+    $scope.Model.send({'user_type':"ind",'ut_method':'set_user_type_i'},function(response){location.href=response.redirect_url;});
   };
 }
 
