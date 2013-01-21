@@ -26,10 +26,10 @@ function UserTypeCtrl($scope, $resource) {
     {},
     {"send": {method: 'JSONP', isArray: false, params: {callback: 'JSON_CALLBACK'}}}
     );
-
+  $scope.haha;
   $scope.updateUserType_C = function(){
 
-    $scope.Model.send({'ut_method':'set_user_type_c'},function(response){location.href=response.redirect_url;});
+    $scope.Model.send({'ut_method':'set_user_type_c'},function(response){$scope.haha=response.redirect_url;});
   };
 
   $scope.updateUserType_I = function(){
