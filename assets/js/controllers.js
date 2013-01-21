@@ -63,7 +63,7 @@ function ProfileCtrl($scope, $resource) {
 
       $scope.Model.send({'function':'get_profile'},function(response){
         $scope.u_profile = response.u_profile;
-        $scope.user_type = $scope.u_profile.user_type;
+        $scope.user_type = $scope.user_type;
 
         if($scope.user_type == "ind"){
 
