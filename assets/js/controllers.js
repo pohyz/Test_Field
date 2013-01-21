@@ -41,6 +41,8 @@ function UserTypeCtrl($scope, $resource) {
 function ProfileCtrl($scope, $resource) {
     
     $scope.u_profile;
+    $scope.display_form;
+    $scope.user_type;
 
     $scope.Model = $resource("http://galaxy-osmosis.appspot.com/db/:function",
     {},
@@ -61,6 +63,25 @@ function ProfileCtrl($scope, $resource) {
 
       $scope.Model.send({'function':'get_profile'},function(response){
         $scope.u_profile = response.u_profile;
+        $scope.user_type = $scope.u_profile.user_type;
+
+        if($scope.user_type == "ind"){
+
+          $scope.display_form = "<tr><td>Student Name:</td>"
+          +"<td><input type='text' ng-model='u_profile.stud_name'></td></tr>"
+          +"<tr><td>Year of Admission:</td>"
+          +"<td><input type='text' ng-model='u_profile.yoa'></td></tr>"
+          +"<tr><td>Email Address:</td>"
+          +"<td><input type='text' ng-model='u_profile.email'></td></tr>"
+          +"<tr><td>Key Skills:</td>"
+          +"<td><input type='text' ng-model='u_profile.skill'></td></tr>"
+          +"<tr><td>About Student:</td>"
+          +"<td><input type='text' ng-model='u_profile.about_stud'></td></tr>";
+        }
+        else{
+
+          $scope.display_form = "<tr><td>Corporate:</td>";
+        }
       });
     };
 }
