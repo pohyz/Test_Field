@@ -26,7 +26,7 @@ function UserTypeCtrl($scope, $resource) {
     {},
     {"send": {method: 'JSONP', isArray: false, params: {callback: 'JSON_CALLBACK'}}}
     );
-  $scope.haha;
+  $scope.haha = "abc";
   $scope.updateUserType_C = function(){
 
     $scope.Model.send({'ut_method':'set_user_type_c'},function(response){$scope.haha=response.redirect_url;});
