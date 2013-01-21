@@ -48,6 +48,4 @@ function ProfileCtrl($scope, $resource) {
     $scope.check_login = function(){
       $scope.Model.send({'function':'check_login'},function(response){location.href=response.redirect_url;});
     };
-
-    $scope.check_login();
 }
