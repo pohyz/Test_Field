@@ -19,34 +19,31 @@
         </tr>
 	
 	<script type="text/javascript">
+	$(window).load(function(){
 		var ctrl = angular.element('body').scope();
+		ctrl.check_login();
+		ctrl.get_profile();
 		u_profile = ctrl.u_profile
-		if(u_profile.user_type == "ind"){
+			if(u_profile.user_type == "ind"){
 
-			$document.write("<tr><td>Student Name:</td>"
-				+"<td><input type='text' ng-model='u_profile.stud_name'></td></tr>"
-				+"<tr><td>Year of Admission:</td>"
-				+"<td><input type='text' ng-model='u_profile.yoa'></td></tr>"
-				+"<tr><td>Email Address:</td>"
-				+"<td><input type='text' ng-model='u_profile.email'></td></tr>"
-				+"<tr><td>Key Skills:</td>"
-				+"<td><input type='text' ng-model='u_profile.skill'></td></tr>"
-				+"<tr><td>About Student:</td>"
-				+"<td><input type='text' ng-model='u_profile.about_stud'></td></tr>"
-				);
-		}
-		else{
+				$document.write("<tr><td>Student Name:</td>"
+					+"<td><input type='text' ng-model='u_profile.stud_name'></td></tr>"
+					+"<tr><td>Year of Admission:</td>"
+					+"<td><input type='text' ng-model='u_profile.yoa'></td></tr>"
+					+"<tr><td>Email Address:</td>"
+					+"<td><input type='text' ng-model='u_profile.email'></td></tr>"
+					+"<tr><td>Key Skills:</td>"
+					+"<td><input type='text' ng-model='u_profile.skill'></td></tr>"
+					+"<tr><td>About Student:</td>"
+					+"<td><input type='text' ng-model='u_profile.about_stud'></td></tr>"
+					);
+			}
+			else{
 
-			document.write("Corp");
-		}
-	</script>
+				document.write("Corp");
+			}
+	});
+</script>
 	</table>
 </body>
 </html>
-<script type="text/javascript">
-$(window).load(function(){
-	var ctrl = angular.element('body').scope();
-	ctrl.check_login();
-	ctrl.get_profile();
-});
-</script>
