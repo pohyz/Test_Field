@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en" ng-app="osmosis">
-<head>
+<head ng-controller="ProfileCtrl">
   <meta charset="utf-8">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.js"></script>
@@ -10,10 +10,9 @@
 </head>
 <body ng-controller="ProfileCtrl">
 	<script type="text/javascript">
-		var ctrl = angular.element('body').scope();
+		var ctrl = angular.element('head').scope();
 		//var ctrl = document.querySelector('body');
 		ctrl.check_login();
-		ctrl.get_profile();
 	</script>
 	Hi! {{nickname}}!<br><br>
 	Welcome to the profile page!
@@ -25,4 +24,9 @@
         </tr>
 	</table>
 </body>
+<script type="text/javascript">
+	var ctrl = angular.element('body').scope();
+	//var ctrl = document.querySelector('body');
+	ctrl.get_profile();
+</script>
 </html>
