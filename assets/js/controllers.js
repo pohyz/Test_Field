@@ -41,14 +41,20 @@ function UserTypeCtrl($scope, $resource) {
 function ProfileCtrl($scope, $resource) {
     
     $scope.u_profile;
-    
+
     $scope.Model = $resource("http://galaxy-osmosis.appspot.com/db/:function",
     {},
     {"send": {method: 'JSONP', isArray: false, params: {callback: 'JSON_CALLBACK'}}}
     );
 
     $scope.check_login = function(){
-      $scope.Model.send({'function':'check_login'},function(response){location.href=response.redirect_url;});
+      $scope.Model.send({'function':'check_login'},function(response){
+        redirect_url = response.redirect_url;
+        
+        if(redirect_url != null){
+          location.href=response.redirect_url;
+        }
+      });
     };
 
     $scope.get_profile = function(){
