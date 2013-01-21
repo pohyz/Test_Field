@@ -38,7 +38,7 @@ function UserTypeCtrl($scope, $resource) {
   };
 }
 
-function ProfileCtrl($scope, $resource) {
+function ProfileCtrl($scope, $resource, $compile) {
     
     $scope.u_profile;
     $scope.display_form;
@@ -67,7 +67,8 @@ function ProfileCtrl($scope, $resource) {
 
         if($scope.user_type == "ind"){
 
-          $scope.display_form = "<table><tr><td>Student Name:</td>"
+          var form_d = angular.element(document.getElementById('form_display'));
+          form_d.append("<table><tr><td>Student Name:</td>"
           +"<td><input type='text' ng-model='u_profile.stud_name'></td></tr>"
           +"<tr><td>Year of Admission:</td>"
           +"<td><input type='text' ng-model='u_profile.yoa'></td></tr>"
@@ -76,7 +77,8 @@ function ProfileCtrl($scope, $resource) {
           +"<tr><td>Key Skills:</td>"
           +"<td><input type='text' ng-model='u_profile.skill'></td></tr>"
           +"<tr><td>About Student:</td>"
-          +"<td><input type='text' ng-model='u_profile.about_stud'></td></tr></table>";
+          +"<td><input type='text' ng-model='u_profile.about_stud'></td></tr></table>");
+          $compile(form_d)($scope);
         }
         else{
 
