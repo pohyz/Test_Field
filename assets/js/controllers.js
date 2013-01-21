@@ -63,11 +63,11 @@ function ProfileCtrl($scope, $resource) {
 
       $scope.Model.send({'function':'get_profile'},function(response){
         $scope.u_profile = response.u_profile;
-        $scope.user_type = $scope.user_type;
+        $scope.user_type = response.user_type;
 
         if($scope.user_type == "ind"){
 
-          $scope.display_form = "<tr><td>Student Name:</td>"
+          $scope.display_form = "<table><tr><td>Student Name:</td>"
           +"<td><input type='text' ng-model='u_profile.stud_name'></td></tr>"
           +"<tr><td>Year of Admission:</td>"
           +"<td><input type='text' ng-model='u_profile.yoa'></td></tr>"
@@ -76,11 +76,11 @@ function ProfileCtrl($scope, $resource) {
           +"<tr><td>Key Skills:</td>"
           +"<td><input type='text' ng-model='u_profile.skill'></td></tr>"
           +"<tr><td>About Student:</td>"
-          +"<td><input type='text' ng-model='u_profile.about_stud'></td></tr>";
+          +"<td><input type='text' ng-model='u_profile.about_stud'></td></tr></table>";
         }
         else{
 
-          $scope.display_form = "<tr><td>Corporate:</td>";
+          $scope.display_form = "<table><tr><td>Corporate:</td></table>";
         }
       });
     };
