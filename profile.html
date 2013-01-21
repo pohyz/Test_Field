@@ -23,18 +23,17 @@
 		u_profile = ctrl.u_profile
 		if(u_profile.user_type == "ind"){
 
-			document.write("<tr>
+			$document.write("<tr>
 				<td>Student Name:</td>
-				<td><input type='text' ng-model='u_profile.stud_name'></td>
-				<td>Year of Admission:</td>
-				<td><input type='text' ng-model='u_profile.yoa'></td>
-				<td>Email Address:</td>
-				<td><input type='text' ng-model='u_profile.email'></td>
-				<td>Key Skills:</td>
-				<td><input type='text' ng-model='u_profile.skill'></td>
-				<td>About Student:</td>
-				<td><input type='text' ng-model='u_profile.about_stud'></td>
-				</tr>
+				<td><input type='text' ng-model='u_profile.stud_name'></td></tr>
+				<tr><td>Year of Admission:</td>
+				<td><input type='text' ng-model='u_profile.yoa'></td></tr>
+				<tr><td>Email Address:</td>
+				<td><input type='text' ng-model='u_profile.email'></td></tr>
+				<tr><td>Key Skills:</td>
+				<td><input type='text' ng-model='u_profile.skill'></td></tr>
+				<tr><td>About Student:</td>
+				<td><input type='text' ng-model='u_profile.about_stud'></td></tr>
 				");
 		}
 		else{
