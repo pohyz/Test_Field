@@ -71,7 +71,7 @@ function ProfileCtrl($scope, $resource, $compile) {
           form_d.append("<table><tr><td>Student Name:</td>"
           +"<td><input type='text' ng-model='stud_name'></td></tr>"
           +"<tr><td>Year of Admission:</td>"
-          +"<td><input type='text' ng-model='u_profile.yoa'></td></tr>"
+          +"<td><input type='text' ng-model='yoa'></td></tr>"
           +"<tr><td>Email Address:</td>"
           +"<td><input type='text' ng-model='u_profile.email'></td></tr>"
           +"<tr><td>Key Skills:</td>"
@@ -90,5 +90,6 @@ function ProfileCtrl($scope, $resource, $compile) {
     $scope.test_method = function(){
 
       $scope.display_form = $scope.stud_name;
+      $scope.yoa = $scope.display_form;
     }
 }
