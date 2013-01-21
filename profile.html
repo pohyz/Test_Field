@@ -8,12 +8,7 @@
 <script src="assets/js/app.js"></script>
 <script src="assets/js/controllers.js"></script>
 </head>
-<body ng-controller="ProfileCtrl">
-	<script type="text/javascript">
-		var ctrl = angular.element('head').scope();
-		//var ctrl = document.querySelector('body');
-		ctrl.check_login();
-	</script>
+<body ng-controller="ProfileCtrl" ng-cloak>
 	Hi! {{nickname}}!<br><br>
 	Welcome to the profile page!
 	<br><br>
@@ -24,9 +19,11 @@
         </tr>
 	</table>
 </body>
-<script type="text/javascript">
-	var ctrl = angular.element('body').scope();
-	//var ctrl = document.querySelector('body');
-	ctrl.get_profile();
-</script>
 </html>
+<script type="text/javascript">
+$(window).load(function(){
+	var ctrl = angular.element('body').scope();
+	ctrl.check_login();
+	ctrl.get_profile();
+});
+</script>
