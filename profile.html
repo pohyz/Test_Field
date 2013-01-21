@@ -9,8 +9,9 @@
 </head>
 <body ng-controller="ProfileCtrl">
 	<script type="text/javascript">
-		$scope.check_login();
-		$scope.get_profile();
+		var ctrl = angular.element('body').scope();
+		ctrl.check_login();
+		ctrl.get_profile();
 	</script>
 	Hi! {{nickname}}!<br><br>
 	Welcome to the profile page!
