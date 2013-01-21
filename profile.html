@@ -11,12 +11,38 @@
 <body ng-controller="ProfileCtrl" ng-cloak>
 	Hi! {{nickname}}!<br><br>
 	Welcome to the profile page!
-	<br><br>
+	<br>
 	<table>
-		<tr ng-repeat="(key,val) in u_profile">
-          <td>{{key}}:</td> 
-          <td><input type="text" ng-model="u_profile[key]"></td>
+		<tr>
+          <td>Student Name:</td> 
+          <td><input type="text" ng-model="u_profile."></td>
         </tr>
+	
+	<script type="text/javascript">
+		var ctrl = angular.element('body').scope();
+		u_profile = ctrl.u_profile
+		if(u_profile.user_type == "ind"){
+
+			document.write("<tr>
+				<td>Student Name:</td>
+				<td><input type='text' ng-model='u_profile.stud_name'></td>
+				<td>Year of Admission:</td>
+				<td><input type='text' ng-model='u_profile.yoa'></td>
+				<td>Email Address:</td>
+				<td><input type='text' ng-model='u_profile.email'></td>
+				<td>Key Skills:</td>
+				<td><input type='text' ng-model='u_profile.skill'></td>
+				<td>About Student:</td>
+				<td><input type='text' ng-model='u_profile.about_stud'></td>
+				</tr>
+				");
+		}
+		else{
+
+			document.write("Corp
+				");
+		}
+	</script>
 	</table>
 </body>
 </html>
