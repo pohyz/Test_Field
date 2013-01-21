@@ -9,7 +9,8 @@
 </head>
 <body ng-controller="ProfileCtrl">
 	<script type="text/javascript">
-		var ctrl = angular.element('body').scope();
+		//var ctrl = angular.element('body').scope();
+		var ctrl = document.querySelector('body');
 		ctrl.check_login();
 		ctrl.get_profile();
 	</script>
