@@ -41,7 +41,7 @@ function UserTypeCtrl($scope, $resource) {
 function ProfileCtrl($scope, $resource, $compile) {
     
     $scope.u_profile;
-    $scope.display_form;
+    $scope.display_form = "initially this.";
     $scope.user_type;
 
     $scope.Model = $resource("http://galaxy-osmosis.appspot.com/db/:function",
@@ -69,7 +69,7 @@ function ProfileCtrl($scope, $resource, $compile) {
 
           var form_d = angular.element(document.getElementById('form_display'));
           form_d.append("<table><tr><td>Student Name:</td>"
-          +"<td><input type='text' ng-model='u_profile.stud_name'></td></tr>"
+          +"<td><input type='text' ng-model='stud_name'></td></tr>"
           +"<tr><td>Year of Admission:</td>"
           +"<td><input type='text' ng-model='u_profile.yoa'></td></tr>"
           +"<tr><td>Email Address:</td>"
@@ -86,4 +86,9 @@ function ProfileCtrl($scope, $resource, $compile) {
         }
       });
     };
+
+    $scope.test_method = function(){
+
+      $scope.display_form = $scope.stud_name;
+    }
 }

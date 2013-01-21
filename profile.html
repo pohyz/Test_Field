@@ -9,10 +9,13 @@
 <script src="assets/js/controllers.js"></script>
 </head>
 <body ng-controller="ProfileCtrl" ng-cloak>
-	Hi! {{nickname}}!<br><br>
+	Hi! {{nickname}}!{{display_form}}<br><br>
 	Welcome to the profile page!
 	<br>
 		<div id="form_display"></div>
+		<form ng-submit="test_method()">
+			<input type="submit" value="click to see">
+		</form>
 </body>
 </html>
 <script type="text/javascript">
