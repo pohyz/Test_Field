@@ -22,19 +22,19 @@ function LoginCtrl($scope, $resource) {
 
 function UserTypeCtrl($scope, $resource) {
   
-  $scope.Model = $resource("http://galaxy-osmosis.appspot.com/db/set_user_type",
+  $scope.Model = $resource("http://galaxy-osmosis.appspot.com/db/:ut_method",
     {},
     {"send": {method: 'JSONP', isArray: false, params: {callback: 'JSON_CALLBACK'}}}
     );
 
   $scope.updateUserType_C = function(){
 
-    $scope.Model.send({'user_type':$scope.user_type_c},function(response){location.href=response.redirect_url;});
+    $scope.Model.send({'ut_method':'set_user_type_c'},function(response){location.href=response.redirect_url;});
   };
 
   $scope.updateUserType_I = function(){
 
-    $scope.Model.send({'user_type':$scope.user_type_i},function(response){location.href=response.redirect_url;});
+    $scope.Model.send({'ut_method':'set_user_type_i'},function(response){location.href=response.redirect_url;});
   };
 }
 
