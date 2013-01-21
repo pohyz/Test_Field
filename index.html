@@ -7,9 +7,10 @@
 <script src="assets/js/app.js"></script>
 <script src="assets/js/controllers.js"></script>
 </head>
-<body>
+<body ng-controller="LoginCtrl">
 
-	<div ng-view></div>
+	Hi! {{nickname}}!<br>
+	<a href="{{login_url}}">Login</a>
 	
 </body>
 </html>

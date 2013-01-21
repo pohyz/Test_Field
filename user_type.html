@@ -1,10 +1,23 @@
+<!doctype html>
+<html lang="en" ng-app="osmosis">
+<head>
+  <meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular-resource.min.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/controllers.js"></script>
+</head>
+<body ng-controller="UserTypeCtrl">
 
-<form ng-submit="updateUserType_I()">
-<input type="hidden" ng-model="user_type_i" value="ind">
-<input type="submit" value="Individual">
-</form>
-{{haha}}
-<form ng-submit="updateUserType_C()">
-<input type="hidden" ng-model="user_type_c" value="cpr">
-<input type="submit" value="Corporate">
-</form>
+	<form ng-submit="updateUserType_I()">
+	<input type="hidden" ng-model="user_type_i" value="ind">
+	<input type="submit" value="Individual">
+	</form>
+	{{haha}}
+	<form ng-submit="updateUserType_C()">
+	<input type="hidden" ng-model="user_type_c" value="cpr">
+	<input type="submit" value="Corporate">
+	</form>
+
+</body>
+</html>
